@@ -114,10 +114,10 @@ function diaDeLaSemana(numeroDeDia) {
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
    if (numeroDeDia === 1 || numeroDeDia === 7) {
-      return "Es fin de semana";
-  } else {
-      return "Es día laboral";
-  }
+       return "Es fin de semana";
+   } else {
+       return "Es dia laboral";
+   }
    
 }
 
@@ -160,7 +160,11 @@ function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
-   return Array.from({ length: 60 }, (v, i) => i * 6);
+   let tabla = [];
+   for (let i = 0; i <= 10; i++) {
+       tabla.push(6 * i);
+   }
+   return tabla;
 }
 
 function mayorACien(array) {
@@ -181,15 +185,16 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   const resultados = [];
    for (let i = 0; i < 10; i++) {
-      let suma = 0;
-      for (let j = 0; j < num; j++) {
-         suma += j;
-      }
-      if (suma === num) {
-         return 'Se interrumpió la ejecución';
-      }
+       num += 2;
+       if (num === i) {
+           return "Se interrumpió la ejecución";
+           break;
+       }
+       resultados.push(num);
    }
+   return resultados;
 }
 
 function continueStatement(num) {
